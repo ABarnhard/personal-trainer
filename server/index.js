@@ -1,0 +1,17 @@
+'use strict';
+
+var Hapi         = require('hapi'),
+    server         = new Hapi.Server(),
+    routes         = require('./routes/config/routes'),
+    plugins        = require('./routes/config/plugins'),
+    authentication = require('./routes/config/authentication');
+
+server.connection({address: '0.0.0.0', port: '3000'});
+
+server.register(plugins, function(){
+  server.auth.strategy('session', 'cookie', true, authentication);
+  server.route(routes);
+  server.start(function(){
+    server.log('info', server.info.uri);
+  });
+});
