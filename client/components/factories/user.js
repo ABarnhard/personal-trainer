@@ -1,8 +1,8 @@
 (function(){
   'use strict';
 
-  angular.module('meanr')
-  .factory('User', ['$rootScope', '$http', '$localForage', function($rootScope, $http, $localForage){
+  angular.module('personal-trainer')
+  .factory('User', ['$rootScope', '$http', function($rootScope, $http){
     var _email;
 
     $rootScope.$on('unauthorized', function(){
@@ -10,9 +10,9 @@
     });
 
     function getEmailFromStorage(){
-      $localForage.getItem('email').then(function(email){
-        broadcast(email);
-      });
+      //$localForage.getItem('email').then(function(email){
+      //  broadcast(email);
+      //});
     }
 
     function broadcast(email){
@@ -26,7 +26,7 @@
 
     function setEmail(email){
       broadcast(email);
-      return $localForage.setItem('email', email);
+      //return $localForage.setItem('email', email);
     }
 
     function register(user){

@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('meanr')
+  angular.module('personal-trainer')
   .directive('nsNav', [function(){
     var o = {};
 

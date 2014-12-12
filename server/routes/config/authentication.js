@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  password: 'ren and stimpy',
+  password: 'TODO MAKE ENV VAR',
   cookie: 'hapi-cookie',
   isSecure: false
 };
