@@ -12,8 +12,8 @@
       abTitle: '@'
     };
     o.controller  = ['$scope', function($scope){
-                      $scope.$on('username', function(e, username){
-                        $scope.username = username;
+                      $scope.$on('user', function(e, user){
+                        $scope.user = user;
                       });
                     }];
     return o;
