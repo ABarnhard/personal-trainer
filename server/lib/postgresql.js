@@ -1,4 +1,5 @@
 'use strict';
+
 var pg = require('pg');
 
 exports.query = function(sql, params, cb){

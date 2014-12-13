@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('personal-trainer', ['ui.router'])
+  angular.module('personal-trainer', ['ui.router', 'ns.nav'])
   .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $httpProvider){
     $urlRouterProvider.otherwise('/');
 
