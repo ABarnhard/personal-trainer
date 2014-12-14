@@ -3,9 +3,8 @@
 
   angular.module('personal-trainer')
   .controller('UsersCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
-    $('#email').focus();
     $scope.user = {};
-    $scope.mode = $state.current.name;
+    $scope.mode = $state.current.name[0].toUpperCase() + $state.current.name.substring(1);
 
     if($scope.mode === 'logout'){
       User.logout().then(function(){
@@ -18,7 +17,6 @@
       if($scope.userForm.$valid){
         if($scope.mode === 'register'){
           User.register($scope.user).then(function(response){
-            toastr.success('User successfully registered.');
             $state.go('login');
           }, function(){
             toastr.error('Error during registration.');
