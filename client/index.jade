@@ -7,8 +7,11 @@ html(ng-app='personal-trainer', lang='en')
     title Personal Trainer
     include views/master/stylesheets
   body
-    include views/nav/nav
-    include views/master/body
-    include views/master/footer
+    #wrap
+        #main
+            include views/nav/nav
+            include views/master/body
+    #footer
+        include views/master/footer
     include views/master/scripts
 

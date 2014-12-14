@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('personal-trainer', ['ui.router'])
-  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $httpProvider){
+  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -11,7 +11,6 @@
     .state('login',    {url:'/login',    templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
     .state('logout',   {url:'/logout',   template:'',                           controller:'UsersCtrl'});
 
-    $httpProvider.interceptors.push('HttpInterceptor');
   }])
   .run(['User', function(User){}]);
 })();
